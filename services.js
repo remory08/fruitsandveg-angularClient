@@ -7,6 +7,12 @@ app.factory('fruitService', ["$http", "$q", function($http, $q) {
     })
   }
 
+  // fruitService.get = function($http) {
+  //   $http.get(baseUrl).then(function(response) {
+  //     console.log(response);
+  //   })
+  // }
+
 
   return fruitService;
 }])

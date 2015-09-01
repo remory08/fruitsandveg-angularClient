@@ -3,16 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Fruits and Vegetables Database!</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
 </head>
 <body ng-controller="Fruits">
+  <h1>Add a Fruit</h1>
   <form ng-submit="add(fruit)">
       <input type="text" placeholder="fruit name" ng-model="fruit.name">
       <input type="text" placeholder="description" ng-model="fruit.description">
       <input type="submit" value="Submit">
   </form>
 
+<h1>Fruits</h1>
+<table>
+  <tr>
+    <th>name</th>
+    <th>description</th>
+  </tr>
+  <tr ng-repeat="fruit in fruits" class="fr-row">
+    <td>{{fruit.name}}</td>
+    <td>{{fruit.description}}</td>
+    <td><button ng-click="edit(fruit)">Edit</button></td>
+    <td><button ng-click="delete(fruit)">Delete</button></td>
+  </tr>
+
+</table>
+
   <script src="app.js" type="text/javascript"></script>
   <script src="services.js"></script>
+  <script src="controllers.js"></script>
 </body>
 </html>
